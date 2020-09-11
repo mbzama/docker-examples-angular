@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "simple-app-angular9": {
+    "simple-app-angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/simple-app-angular9",
+            "outputPath": "dist/docker-examples-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "simple-app-angular9:build"
+            "browserTarget": "docker-examples-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "simple-app-angular9:build:production"
+              "browserTarget": "docker-examples-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "simple-app-angular9:build"
+            "browserTarget": "docker-examples-angular:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "simple-app-angular9:serve"
+            "devServerTarget": "docker-examples-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "simple-app-angular9:serve:production"
+              "devServerTarget": "docker-examples-angular:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "simple-app-angular9"
+  "defaultProject": "docker-examples-angular"
 }

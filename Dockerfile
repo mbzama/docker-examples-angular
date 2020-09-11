@@ -5,9 +5,9 @@ FROM node:10-alpine as builder
 COPY package.json package-lock.json ./
 
 # Install the dependencies and make the folder
-RUN npm install && mkdir /docker-examples-angular9 && mv ./node_modules ./docker-examples-angular9
+RUN npm install && mkdir /docker-examples-angular && mv ./node_modules ./docker-examples-angular
 
-WORKDIR /docker-examples-angular9
+WORKDIR /docker-examples-angular
 
 COPY . .
 
@@ -25,7 +25,7 @@ COPY ./nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy from the stahg 1
-COPY --from=builder /docker-examples-angular9/dist/docker-examples-angular9/ /usr/share/nginx/html
+COPY --from=builder /docker-examples-angular/dist/docker-examples-angular/ /usr/share/nginx/html
 
 EXPOSE 4200 80
 

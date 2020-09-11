@@ -1,5 +1,5 @@
 {
-  "name": "docker-examples-angular9",
+  "name": "docker-examples-angular",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
