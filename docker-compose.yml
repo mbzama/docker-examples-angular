@@ -1,0 +1,9 @@
+web:
+  image: 'docker-examples-angular'
+
+loadbalancer:
+  image: 'dockercloud/haproxy:latest'
+  links:
+    - web
+  ports:
+    - '8001:80'

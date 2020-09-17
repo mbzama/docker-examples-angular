@@ -35,9 +35,23 @@ If you encounter this error-> docker: Error response from daemon: Conflict. The 
 Remove the container using `docker rm -f angular-app-container`
 
 
-## Create/Run docker container
+## Accessing the app
 Navigate to `http://localhost:8888/`
 
 
 ## To login to running container
 Run `docker exec -it angular-app-container sh` and inspect the files using regular linux commands such ls, cat .,
+
+
+## To run the app using docker-compose
+Run `docker-compose up -d`
+
+
+## To scale the containers or run multiple copies of the app
+Run `docker-compose scale web=3`. To verify run `docker ps` to view the active containers
+![alt text](https://github.com/mbzama/docker-examples-angular/blob/master/scale.png)
+
+
+## Accessing the app
+Navigate to `http://localhost:8001/`
+
