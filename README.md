@@ -34,13 +34,16 @@ If you encounter this error-> docker: Error response from daemon: Conflict. The 
 
 Remove the container using `docker rm -f angular-app-container`
 
-
 ## Accessing the app
 Navigate to `http://localhost:8888/`
 
 
 ## To login to running container
 Run `docker exec -it angular-app-container sh` and inspect the files using regular linux commands such ls, cat .,
+
+
+## Stop the docker containers
+Run `docker stop angular-app-container`
 
 
 ## To run the app using docker-compose
@@ -54,4 +57,15 @@ Run `docker-compose scale web=3`. To verify run `docker ps` to view the active c
 
 ## Accessing the app
 Navigate to `http://localhost:8001/`
+
+
+## Stop the docker containers
+Run `docker-compose stop`
+
+
+## Stop & remove the docker containers
+Run `docker-compose down`
+
+
+
 
